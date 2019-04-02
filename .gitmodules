@@ -1,0 +1,3 @@
+[submodule "firstgit"]
+	path = firstgit
+	url = https://github.com/Lucasbatt/firstgit.git
