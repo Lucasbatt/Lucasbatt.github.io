@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>carrossel teste lista</title>
+    <style>
+    ul {
+        width: 40%;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      
+      li {
+        height: 200px;
+        width: 200px;
+        display: block;
+        list-style: none;
+        padding: 3px;
+        margin: 3px;
+      }
+      
+      button.prev, button.next {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        color: #FFF;
+        background-color: #333;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+      }
+      button.prev {
+        position: relative;
+        left: 0;
+        top: 80px;
+      }
+      button.next {
+        position: relative;
+        right: 0;
+        top: 80px;
+      }
+      </style>
+</head>
+<body>
+    <ul>
+        <li><img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcVW5BGymBbrzhzxusBXBTfL2rsna9ORiAwZzzTEPCXZ4nuh2I"></li>
+        <li><img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/AlaskanBear_closeup.jpg/220px-AlaskanBear_closeup.jpg"></li>
+        <li><img class="img" src="https://d3i6fh83elv35t.cloudfront.net/static/2018/11/fat-bears_GettyImages-966223700-1200x800.jpg"></li>
+        <li><img class="img" src="https://postmediacalgaryherald2.files.wordpress.com/2017/10/grizzly-1.png?w=371&h=277&crop=1"></li>
+        <li><img class="img" src="https://www.gannett-cdn.com/-mm-/2cb640d078eb9ddfa0d892e3ff12d1167fdd9fc7/c=100-0-900-600/local/-/media/2018/08/10/USATODAY/usatsports/grizzly-bear.jpg?width=534&height=401&fit=crop"></li>
+        <li><img class="img" src="https://edge.app/wp-content/uploads/2018/12/BearMarket.jpg"></li>
+        <li><img class="img" src="https://pixel.nymag.com/imgs/fashion/daily/2018/10/05/05-fat-bear-week.w700.h700.jpg"></li>
+        <li><img class="img" src="https://www.nps.gov/articles/images/Image-w-cred-cap_-1200w-_-Brown-Bear-page_-brown-bear-in-fog_2_1.jpg?maxwidth=1200&maxheight=1200&autorotate=false"></li>
+        <li><img class="img" src="https://i.guim.co.uk/img/media/11d4c182d094199e26ddb36febe67123a9bbc93a/34_246_2966_4275/master/2966.jpg?width=1920&quality=85&auto=format&fit=max&s=f438784d4a7928a8be99810697d61355"></li>
+      </ul>
+      
+      <button class="prev" onclick="show(-1)">&lt;</button>
+      <button class="next" onclick="show(+1)">&gt;</button>
+
+<script>
+let liEls = document.querySelectorAll('ul li');
+let index = 0;
+window.show = function(increase) {
+    if (increase > 0){
+        index += Math.floor(document.body.childNodes[1].clientWidth/200);
+    }
+    else {
+        index -= Math.floor(document.body.childNodes[1].clientWidth/200);        
+    }
+  index = Math.min(
+    Math.max(index,0),
+    liEls.length-1
+  );
+  liEls[index].scrollIntoView({behavior: 'smooth'});
+}
+
+</script>
+
+</body>
+</html>

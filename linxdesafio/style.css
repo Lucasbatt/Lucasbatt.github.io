@@ -1,0 +1,48 @@
+
+.receptaculo {
+    margin: 20px;
+    height: 230px;
+    width: 40%;
+    background-color:rgb(185, 185, 185);
+    font-size: 13px; /* mudar para 0px */ 
+    /*align-content: center;
+    position: relative;*/
+}
+.receptaculo .cabecalho{
+    font-size: 24px;
+    color: rgb(12, 95, 122);
+    background-color: rgb(193, 239, 247);
+    display: block;
+    padding:10px
+}
+.receptaculo .corpo {
+    display: inline-block;
+    background-color: rgba(31, 255, 117, 0.233);
+    white-space: nowrap;
+}
+.receptaculo .corpo .referencia{
+    white-space: nowrap;
+    background-color: rgba(230, 255, 1, 0.575);
+    display: inline-block;
+}
+.receptaculo .corpo .recomendacoes{
+    white-space: nowrap;
+    background-color: rgba(82, 165, 4, 0.548);
+    display: inline-block;
+    /* overflow: hidden; */
+}
+.receptaculo .corpo .item ::before{
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+.receptaculo .corpo .item{
+    height: 150px;
+    width: 150px;
+    background-color: rgba(65, 0, 245, 0.521);
+    text-align: center;
+    font-size: 28px;
+    margin: 5px;
+    display: inline-block;
+}

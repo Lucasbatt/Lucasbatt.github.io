@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>fetcher</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+        <div class="item" id="saida"></div>
+    <script>/*
+    var obj ={fName:"Pe", lName: "Grande",age: 500};
+    var some = {caracteristica: "batata", caracter: 2};
+    document.getElementById('saida').innerHTML = obj.fName+" "+obj.lName;
+    console.log(obj);*/
+        
+/*
+    $jsonp.send('_url' , {
+        callbackName: 'xis',
+        function(json){
+            console.log()
+        }
+    })
+*/
+
+    </script>
+
+<script>
+    /* Busca dados para exibir */
+    var resposta 
+    window.X = function (response) {
+       resposta = response;
+       };
+    var src = 'http://roberval.chaordicsystems.com/challenge/challenge.json?callback=X';
+    var script = document.createElement('script');
+    script.src = src;
+    document.body.appendChild(script);
+    
+    /*     manipula e coloca no     */
+    console.log(myObj.data.recommendation[1].businessId);
+    document.getElementById('saida').innerHTML = myObj.data.recommendation[0].name;
+/* innerHTML injeta o conteudo no html no ponto getElement */
+</script>
+
+</body>
+</html>
