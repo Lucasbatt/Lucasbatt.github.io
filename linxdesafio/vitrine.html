@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Defasio Linx Lucas Battistella</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    
+<script type="mustache-tmpl" id="templateitem">
+        <li class="item" onmouseover="changeTo(this)" onmouseout="changeBack(this)"><img src="http://{{imageName}}" alt="erro ao carregar imagem"><p class="texto desc">{{name}}</p> 
+        {{#oldPrice}}
+        <div class="texto antigo">De: {{oldPrice}}</div>
+        {{/oldPrice}}
+        <div class="texto preco">Por: <b>{{price}}</b></div>
+        <div class="texto parcelado">
+            {{#productInfo}}
+            {{{paymentConditions}}} sem juros
+            {{/productInfo}}
+        </div>     
+        </li>
+        
+</script>   
+
+</head>
+<body>
+
+<div class="receptaculo">
+    <div class="cabecalho">
+        Você visitou:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e talvez se interesse por:
+    </div>
+    <div class="corpo">
+        <div class="referencia" id="reference"></div>
+        <button class="prev" onclick="show(-1)">&lt;</button>
+        <ul class="recomendacoes" id="recomendation"></ul>
+        <button class="next" onclick="show(+1)">&gt;</button>
+    </div>
+
+</div>
+<script src="js/main.js"></script>
+
+</body>
+</html>
