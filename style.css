@@ -19,7 +19,7 @@
 }
 .receptaculo .corpo {
     display: inline-block;
-    width: 100%;
+    width: 55%;
     background-color: rgb(255, 255, 255);
     white-space: nowrap;
 }
