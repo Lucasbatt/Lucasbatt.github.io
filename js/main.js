@@ -39,14 +39,19 @@
      * @param {Object} resp.data.widget - contem um {number} size 
      * (provavelmente usado para definir quantas recomendacoes devem 
      * ser exibidas)
-     * @param {Object} resp.data.reference - contem:
-     *                                              {string} businessID
-     *                                              {string} name
-     *                                              {string} imageName
-     *                                              {string} detailUrl
-     *                                              {string} price
-     *                                              {string} oldPrice
-     *                                              {string} product
+     * @param {Object} resp.data.reference - contem {string} timestamp
+     *                                            e {Object} item 
+     * @param {Object} resp.data.reference.item - contem:
+     *                                              {string} businessID - não usado
+     *                                              {string} name - descrição do produto exibida abaixo da imagem
+     *                                              {string} imageName - endereco da imagem a ser usada
+     *                                              {string} detailUrl - endereco destino, quando clica vai para
+     *                                              {string} price - exibido abaixo da descricao
+     *                                              {string} oldPrice - se existe esse valor deve se exibido acima do price
+     *                                              {Object} productInfo - que cotem: 
+     *                                                       {string} paymentConditions
+     * @param {Object} resp.data.recommendation - uma lista de Object iguais ao anterior
+     * 
      * (~ Linhas parecem iguais em secoes, 
      * talvez encapsular em uma funcao que seja chamada duas vezes ~)
      */
