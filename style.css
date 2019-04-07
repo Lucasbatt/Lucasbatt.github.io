@@ -1,9 +1,112 @@
-.border {
-    border: 5px solid blueviolet;
-    padding:20 px;
+
+.receptaculo {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    height: 100%;
     width: 33%;
-    text-align: center
+    background-color:rgb(185, 185, 185);
+    font-size: 0px; /* mudar para 0px */ 
+    /*align-content: center;
+    position: relative;
+    overflow: hidden;*/
 }
-.potato{
-    border: 3px dotted rosybrown;
+.receptaculo .cabecalho{
+    font-size: 24px;
+    color: rgb(12, 95, 122);
+    background-color: rgb(193, 239, 247);
+    display: block;
+    padding:10px
+}
+.receptaculo .corpo {
+    display: inline-block;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    white-space: nowrap;
+}
+.receptaculo .corpo .referencia{
+
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+}
+.receptaculo .corpo .texto{
+    color: rgb(0, 0, 0);
+    text-align: left;
+    overflow: hidden;
+    line-height: 14px;
+    word-break: normal;
+    width: 100%;
+    padding: 0;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+.receptaculo .corpo .texto.desc{
+    height: 39px;
+}
+.receptaculo .corpo .texto.antigo{
+    font-size: 10px;
+}
+.receptaculo .corpo .texto.preco{
+    color: red;
+    font-size: 18px;
+}
+.receptaculo .corpo .texto.parcelado{
+    color: red;
+}
+
+
+.receptaculo .corpo .recomendacoes{
+    width: 100%;
+    white-space: nowrap;
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+     overflow: hidden; 
+}
+.receptaculo .corpo .item ::before{
+
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+.receptaculo .corpo .item{
+    width: 150px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 28px;
+    padding: 0px;
+    display: inline-block;
+
+
+}
+.receptaculo .corpo .ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .receptaculo .corpo .ul .div{
+    display: inline-block;
+    list-style: none;
+  }
+  
+  button.prev, button.next{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #FFF;
+    background-color: rgb(17, 0, 255);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+  }
+  button.prev{
+    position: relative;
+    left: 0;
+    bottom: 120px;
+  }
+  button.next{
+    position: relative;
+    right: 0;
+    bottom: 120px;
 }

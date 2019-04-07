@@ -1,0 +1,9 @@
+.border {
+    border: 5px solid blueviolet;
+    padding:20 px;
+    width: 33%;
+    text-align: center
+}
+.potato{
+    border: 3px dotted rosybrown;
+}

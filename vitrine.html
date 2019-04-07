@@ -9,16 +9,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
     
 <script type="mustache-tmpl" id="templateitem">
-        <li class="item" onmouseover="changeTo(this)" onmouseout="changeBack(this)"><img src="http://{{imageName}}" alt="erro ao carregar imagem"><p class="texto desc">{{name}}</p> 
-        {{#oldPrice}}
-        <div class="texto antigo">De: {{oldPrice}}</div>
-        {{/oldPrice}}
-        <div class="texto preco">Por: <b>{{price}}</b></div>
-        <div class="texto parcelado">
-            {{#productInfo}}
-            {{{paymentConditions}}} sem juros
-            {{/productInfo}}
-        </div>     
+        <li class="item" onmouseover="changeTo(this)" onmouseout="changeBack(this)">
+            <a href="http{{detailUrl}}" target="_blank">
+                <img src="http://{{imageName}}" alt="erro ao carregar imagem"><p class="texto desc">{{name}}</p> 
+                {{#oldPrice}}
+                <div class="texto antigo">De: {{oldPrice}}</div>
+                {{/oldPrice}}
+                <div class="texto preco">Por: <b>{{price}}</b></div>
+                <div class="texto parcelado">
+                    {{#productInfo}}
+                    {{{paymentConditions}}} sem juros
+                    {{/productInfo}}</div>
+            </a>     
         </li>
         
 </script>   
