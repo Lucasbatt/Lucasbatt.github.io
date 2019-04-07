@@ -4,11 +4,8 @@
     margin: 20px;
     height: 100%;
     width: 33%;
-    background-color:rgb(185, 185, 185);
-    font-size: 0px; /* mudar para 0px */ 
-    /*align-content: center;
-    position: relative;
-    overflow: hidden;*/
+    background-color:rgb(255, 255, 255);
+    font-size: 0px;
 }
 .receptaculo .cabecalho{
     font-size: 24px;
@@ -24,11 +21,12 @@
     white-space: nowrap;
 }
 .receptaculo .corpo .referencia{
-
+    
     background-color: rgb(255, 255, 255);
     display: inline-block;
 }
 .receptaculo .corpo .texto{
+    text-decoration: none;
     color: rgb(0, 0, 0);
     text-align: left;
     overflow: hidden;
@@ -40,16 +38,20 @@
     font-size: 14px;
 }
 .receptaculo .corpo .texto.desc{
+    text-decoration: none;
     height: 39px;
 }
 .receptaculo .corpo .texto.antigo{
+    text-decoration: none;
     font-size: 10px;
 }
 .receptaculo .corpo .texto.preco{
+    text-decoration: none;
     color: red;
     font-size: 18px;
 }
 .receptaculo .corpo .texto.parcelado{
+    text-decoration: none;
     color: red;
 }
 
@@ -68,6 +70,7 @@
     height: 100%;
 }
 .receptaculo .corpo .item{
+    text-decoration: none;
     width: 150px;
     background-color: rgb(255, 255, 255);
     text-align: center;
