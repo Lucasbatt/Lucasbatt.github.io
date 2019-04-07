@@ -4,7 +4,7 @@
     margin: 20px;
     height: 100%;
     width: 33%;
-    background-color:rgb(185, 185, 185);
+    background-color:rgb(245, 245, 245);
     font-size: 0px; /* mudar para 0px */ 
     /*align-content: center;
     position: relative;
@@ -20,12 +20,12 @@
 .receptaculo .corpo {
     display: inline-block;
     width: 100%;
-    background-color: rgba(31, 255, 117, 0.233);
+    background-color: rgba(255, 255, 255, 0.233);
     white-space: nowrap;
 }
 .receptaculo .corpo .referencia{
 
-    background-color: rgba(227, 240, 111, 0.575);
+    background-color: rgba(255, 255, 255, 0.575);
     display: inline-block;
 }
 .receptaculo .corpo .texto{
@@ -55,7 +55,7 @@
 
 
 .receptaculo .corpo .recomendacoes{
-    width: 100%;
+    width: 55%;
     white-space: nowrap;
     background-color: rgb(255, 255, 255);
     display: inline-block;
@@ -102,11 +102,11 @@
   }
   button.prev{
     position: relative;
-    left: 0;
-    bottom: 120px;
+    left: 0px;
+    top: -125px;
   }
   button.next{
     position: relative;
     right: 0;
-    bottom: 120px;
+    top: -125px;
   }
