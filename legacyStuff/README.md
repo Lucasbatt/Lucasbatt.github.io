@@ -3,9 +3,9 @@ Entrega              07/04/2019
 5 dias
 
 *workflow previsto:                                          /previsto //conclusao
-    *aprender Git de verdade                                /(dia 1)    //dia 1
-    *terminar videoaulas de html e js                       /(dia 1)    //dia 2
-    *desenhar fluxo do projeto                              /(dia 2)    //dia 3
+*aprender Git de verdade                                /(dia 1)    //dia 1
+*terminar videoaulas de html e js                       /(dia 1)    //dia 2
+*desenhar fluxo do projeto                              /(dia 2)    //dia 3
 
 
 *workflow do projeto:
@@ -18,7 +18,7 @@ Entrega              07/04/2019
     *compor todos os elementos em arquivos unicos           /4  //5
     *corrigir anomalias                                     /5  //5
     *revisar                                                /5  //5
-        *-*quase esqueci dos link destinos
+        *quase esqueci dos link destinos
     *upar codigo                                            /5  //5
 
 O css está ñ-ideal, seria bom refazer totalmente apartir do zero,
