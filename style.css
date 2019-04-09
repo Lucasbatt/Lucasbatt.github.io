@@ -1,24 +1,37 @@
 
 .receptaculo {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 20px;
     height: 100%;
-    width: 33%;
+    width: 80%;
+    min-width: 450px;
+    /* mudar cor de volta para branco*/
     background-color:rgb(255, 255, 255);
-    font-size: 0px;
 }
 .receptaculo .cabecalho{
     font-size: 24px;
     color: rgb(12, 95, 122);
     background-color: rgb(193, 239, 247);
     display: block;
-    padding:10px
+    padding:10px;
 }
+.receptaculo .cabecalho .headertext{
+    display: inline-flex;
+    min-width: 150px;
+    font-size: 1em;
+    font-stretch: extra-condensed;    
+}
+.receptaculo .cabecalho .headertext.s{
+    position: relative;
+    left: 20px;
+}
+
+/*   */
+
 .receptaculo .corpo {
-    display: inline-block;
-    width: 55%;
+    width: 100%;
     background-color: rgb(255, 255, 255);
-    white-space: nowrap;
+    display: inline-flex;
+    overflow: hidden;
 }
 .receptaculo .corpo .referencia{
     
@@ -26,58 +39,46 @@
     display: inline-block;
 }
 .receptaculo .corpo .texto{
-    text-decoration: none;
     color: rgb(0, 0, 0);
     text-align: left;
     overflow: hidden;
-    line-height: 14px;
+    line-height: 13px;
     word-break: normal;
     width: 100%;
     padding: 0;
     text-overflow: ellipsis;
-    font-size: 14px;
+    font-size: 13px;
+    white-space: normal;
 }
 .receptaculo .corpo .texto.desc{
-    text-decoration: none;
     height: 39px;
 }
 .receptaculo .corpo .texto.antigo{
-    text-decoration: none;
     font-size: 10px;
 }
 .receptaculo .corpo .texto.preco{
-    text-decoration: none;
     color: red;
     font-size: 18px;
 }
 .receptaculo .corpo .texto.parcelado{
-    text-decoration: none;
+    font-size: 10px;
     color: red;
 }
 
 
 .receptaculo .corpo .recomendacoes{
     width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: block;
+    overflow: hidden;
     white-space: nowrap;
-    background-color: rgb(255, 255, 255);
-    display: inline-block;
-     overflow: hidden; 
 }
-.receptaculo .corpo .item ::before{
 
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-}
 .receptaculo .corpo .item{
-    text-decoration: none;
     width: 150px;
-    background-color: rgb(255, 255, 255);
     text-align: center;
-    font-size: 28px;
-    padding: 0px;
     display: inline-block;
-
+    cursor: pointer;
 
 }
 .receptaculo .corpo .ul{
@@ -97,19 +98,11 @@
     align-items: center;
     justify-content: center;
     font-size: 32px;
-    color: #FFF;
-    background-color: rgb(17, 0, 255);
-    border-radius: 50%;
+    color: rgba(0, 0, 255, 0.4);
+    background-color: rgba(198, 197, 218, 0.849);
+    border-radius: 30%;
     width: 44px;
     height: 44px;
-  }
-  button.prev{
     position: relative;
-    left: 0;
-    bottom: 120px;
+    top: 110px;
   }
-  button.next{
-    position: relative;
-    right: 0;
-    bottom: 120px;
-}
