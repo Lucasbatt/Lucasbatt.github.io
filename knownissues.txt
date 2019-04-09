@@ -1,0 +1,5 @@
+1 - itens que não tem @oldPrice tem altura diferente dos demais
+    talvez algum parametro flex strech ajuste.
+2 - Setas nao sao como definido pela proposta, 
+    mudar para uma imagem estatica 
+    ou fazer uma seta parecida em css puro

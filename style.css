@@ -59,6 +59,7 @@
 .receptaculo .corpo .texto.preco{
     color: red;
     font-size: 18px;
+    line-height: 18px;
 }
 .receptaculo .corpo .texto.parcelado{
     font-size: 10px;
@@ -72,6 +73,8 @@
     display: block;
     overflow: hidden;
     white-space: nowrap;
+    padding: 0px;
+    margin: 0px;
 }
 
 .receptaculo .corpo .item{
@@ -79,7 +82,7 @@
     text-align: center;
     display: inline-block;
     cursor: pointer;
-
+    border-radius: 3%;
 }
 .receptaculo .corpo .ul{
     display: flex;
