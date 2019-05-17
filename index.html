@@ -6,12 +6,90 @@
     <title>Trabalhos IA</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+
 </head>
-<body>
-    Só inspecionar a pagina e digitar play() no console
-
-
+<script type="mustache-tmpl" id="template">
+    <li class="one_exec">
+            <p class="texto">
+                As unidades consumidoras religadas nesse caso foram: {{ligados}} </p> 
+            <p> 
+                O custo total em energia foi {{custo}} de {{beta}} </p>
+    </li>
     
+</script>   
+<body>
+<div class="quadro">
+    <div class="texto">
+        <div class="cabecalho">
+            <h1> Trabalho de Inteligencia Artificial - Busca cega</h1>
+            <h2>
+                Feito por: Lucas Battistella
+            </h2>
+        </div>
+        <div class="problema">
+            <p>
+            A motivação do problema é a solução rápida que respeite uma ordem de prioridade na reconfiguração 
+            de uma rede de distribuição de energia após um evento de falha, onde 
+            nem todas as unidades consumidoras poderão ser reabastecidas.
+            A rede de consumidores é exibida na imagem ao lado,
+             a ordem de religamento deve dar prioridade conforme a posição na fila:</p>
+             <p> A; C; G; L; O; P; F; B; M; N </p>  
+             <p>Onde o custo em potencia eletrica para religar cada unidade é:</p>
+             <p>"A":5, "C":10, "G":20, "L": 13, "O": 40, 
+                    "P": 10, "F": 50, "B": 5, "M": 13, "N": 13</p>
+            <p>Deseja-se saber quais unidades serão religadas caso a potencia eletrica
+                 disponivel seja de 70, 90 e 95 unidades</p>
+        </div>
+        <div class="solucao">
+            <p>
+                A solução foi desenvolvida em javascript, para rodar em guias de navegadores (esta página),
+                Utilizando apenas javascript nativo para o algoritmo de busca 
+                (e o framework Mustache para povoar a pagina de maneira dinamica),
+                O primeiro desafio encontra-se em descrever os estados do sistema em um objeto (json),
+                ao invez de declarar todos os estados, em função do número de variaveis,
+                declaramos apenas quais são as unidades consumidoras religadas em uma String,
+                o custo acumulado do religamento destas unidades e um valor que servirá para a
+                implementação da ordem de prioridade</p>
+            <p> Os valores de custo de cada unidade, assim como sua ordem de prioridade
+                 e as relações de vizinhança são todas armazenadas em variveis de nome referenciado,
+                 de modo que o primeiro estado pode ser descrito como:</p>
+            <p> estado_inicial = {ligados: "A", custo: custo.A, prior: prioridade.A}</p>
+            <p> A representação usada é baseada em grafos, os vertices são as unidades consumidoras e 
+                as arestas são as relações de vizinhança.</p>
+            <p> O algoritmo começa conferindo se o primeiro estado a ser ligado ("A", na proposta do problema)
+                tem custo inferior a pontecia total disponivel, caso verdadeiro, coloca este estado numa lista,
+                 enquanto essa lista não for vazia, ele busca todos os vizinhos desta unidade para 
+                 criar novos estados, adicionando eles a esta lista caso o valor de custo seja inverior ao beta
+                 e este vizinho já não esteja ligado (poda do retorno)
+                 removendo da lista o estado original a cada iteração.
+                 Toda vez que é criado um novo estado existe uma comparação entre os valores de prioridade
+                 do novo estado e do melhor estado encontrado até o momento, caso necessario
+                 ocorre a atualização do novo melhor estado de acordo com a prioridade.
+                 Ao fim, ocorre o retorno do melhor estado encontrado. 
+            </p>
+        </div>
+
+    </div>
+    <div class="figura">
+        <div class="imagem">
+            Representação da malha de abastecimento em estudo:
+            <img src="trabIA1.png"> 
+        </div>
+        <div class="botoes">
+            <input id="origem_A" type="text" placeholder="A" required>
+            <input id="numerobeta" type="number" placeholder="70" required>
+            <button onclick="resgata()">Play</button>
+        </div>
+        Os resultados das execuções são:
+        <ul class="resultado" id="resultado">
+
+        </ul>
+    </div>
+
+
+</div>
+
+    <script src='main.js'></script>
 </body>
 </html>
