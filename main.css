@@ -1,23 +1,28 @@
 .quadro {
- width: 70%;
- display: inline-flex;
- background-color: antiquewhite;
- align-items: flex-start;
+width: 70%;
+display: inline-flex;
+background-color: antiquewhite;
+align-items: flex-start;
 }
 
 div.texto {
- width: 100%;
- display: inline;
- background-color: beige;
+width: 100%;
+display: inline;
+background-color: beige;
 }
 
 .figura {
- background: azure;
- width: 100%;
+background: azure;
+width: 100%;
 }
 
 
 body {
- align-content: flex-start;
- align-items: start;
+align-content: flex-start;
+align-items: start;
+}
+
+li.one_exec {
+
+background-color: cadetblue;
 }
