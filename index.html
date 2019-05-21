@@ -29,11 +29,8 @@
         </div>
         <div class="problema">
             <p>
-            A motivação do problema é a solução rápida que respeite uma ordem de prioridade na reconfiguração 
-            de uma rede de distribuição de energia após um evento de falha, onde 
-            nem todas as unidades consumidoras poderão ser reabastecidas.
-            A rede de consumidores é exibida na imagem ao lado,
-             a ordem de religamento deve dar prioridade conforme a posição na fila:</p>
+                A motivação do problema é a solução rápida que respeite uma ordem de prioridade na reconfiguração de uma rede de distribuição de energia após um evento de falha, onde nem todas as unidades consumidoras poderão ser reabastecidas. A rede de consumidores é exibida na imagem ao lado, a ordem de religamento deve dar prioridade conforme a posição na fila:
+            </p>
              <p> A; C; G; L; O; P; F; B; M; N </p>  
              <p>Onde o custo em potencia eletrica para religar cada unidade é:</p>
              <p>"A":5, "C":10, "G":20, "L": 13, "O": 40, 
@@ -43,31 +40,19 @@
         </div>
         <div class="solucao">
             <p>
-                A solução foi desenvolvida em javascript, para rodar em guias de navegadores (esta página),
-                Utilizando apenas javascript nativo para o algoritmo de busca 
-                (e o framework Mustache para povoar a pagina de maneira dinamica),
-                O primeiro desafio encontra-se em descrever os estados do sistema em um objeto (json),
-                ao invez de declarar todos os estados, em função do número de variaveis,
-                declaramos apenas quais são as unidades consumidoras religadas em uma String,
-                o custo acumulado do religamento destas unidades e um valor que servirá para a
-                implementação da ordem de prioridade</p>
-            <p> Os valores de custo de cada unidade, assim como sua ordem de prioridade
-                 e as relações de vizinhança são todas armazenadas em variveis de nome referenciado,
-                 de modo que o primeiro estado pode ser descrito como:</p>
+                A solução foi desenvolvida em javascript, para rodar em guias de navegadores (esta página), Utilizando apenas javascript nativo para o algoritmo de busca (e o framework Mustache para povoar a pagina de maneira dinâmica), O primeiro desafio encontra-se em descrever os estados do sistema em um objeto (json), ao invés de declarar todos os estados, em função do número de variáveis, declaramos apenas quais são as unidades consumidoras religadas em uma String, o custo acumulado do religamento destas unidades e um valor que servirá para a implementação da ordem de prioridade.</p>
+            <p> Os valores de custo de cada unidade, assim como sua ordem de prioridade e as relações de vizinhança são todas armazenadas em variáveis de nome referenciado, de modo que o primeiro estado pode ser descrito como:</p>
             <p> estado_inicial = {ligados: "A", custo: custo.A, prior: prioridade.A}</p>
+            <p>“custo” e “prioridade” são objetos que têm propriedades com nomes de vértices e conteúdos numéricos.</p>
             <p> A representação usada é baseada em grafos, os vertices são as unidades consumidoras e 
                 as arestas são as relações de vizinhança.</p>
-            <p> O algoritmo começa conferindo se o primeiro estado a ser ligado ("A", na proposta do problema)
-                tem custo inferior a pontecia total disponivel, caso verdadeiro, coloca este estado numa lista,
-                 enquanto essa lista não for vazia, ele busca todos os vizinhos desta unidade para 
-                 criar novos estados, adicionando eles a esta lista caso o valor de custo seja inverior ao beta
-                 e este vizinho já não esteja ligado (poda do retorno)
-                 removendo da lista o estado original a cada iteração.
-                 Toda vez que é criado um novo estado existe uma comparação entre os valores de prioridade
-                 do novo estado e do melhor estado encontrado até o momento, caso necessario
-                 ocorre a atualização do novo melhor estado de acordo com a prioridade.
-                 Ao fim, ocorre o retorno do melhor estado encontrado. 
+            <p>Para implementação da ordem de prioridade ocorre pela soma das prioridades das unidades ligadas, para evitar que a soma de prioridades menores possa superar a prioridade de A por exemplo, foram atribuídos valores correspondentes a potências de 2, onde A é 512 (nona potência) e N é 1 (potência zero), assim a somatória de todos os outros estados ainda é menor que A.</p>
+            <p> O algoritmo começa conferindo se o primeiro estado a ser ligado ("A", na proposta do problema) tem custo inferior a potência total disponível, caso verdadeiro, coloca este estado numa lista, enquanto essa lista não for vazia, ele busca todos os vizinhos desta unidade para criar novos estados, adicionando eles a esta lista caso o valor de custo seja inferior ao beta e este vizinho já não esteja ligado (poda do retorno) removendo da lista o estado original a cada iteração. Toda vez que é criado um novo estado existe uma comparação entre os valores de prioridade do novo estado e do melhor estado encontrado até o momento, caso necessário ocorre a atualização do novo melhor estado de acordo com a prioridade. Ao fim, ocorre o retorno do melhor estado encontrado. 
             </p>
+            <p>Um <b>problema</b> desta implementação é que, devido a natureza do problema de não ter um estado meta, o programa continuará a procurar estados mesmo que já tenha atingido o resultado final, até que a fila de busca se esvazie por não ser mais possível ligar nenhuma outra unidade consumidora.</p>
+            <p>Este algoritmo <b>gera</b> todas as combinações possíveis de serem ligadas, inclusive <b>combinações repetidas</b> (ABC e ACB, por exemplo), e retorna ao final apenas a primeira de maior valor de prioridade. Evitar a duplicidade seria possível caso fossem mantidos os valores de prioridade total de todos os estados já gerados e então não fossem adicionados estados com valores repetidos na fila de busca.            </p>
+            <p>Para assemelhar a solução feita ao algoritmo de busca em largura, seria necessário ordenar os estados que serão usados para gerar novos estados em função da maior prioridade total de cada um deles. Assim o algoritmo buscaria primeiro os estados que tivessem os consumidores de maior prioridade. Exemplo, se a origem for A e beta = 30, da forma descrita o estado descrito como ACB seria gerado antes de ABP. O que poderia ser benéfico caso não fosse necessario geral todas as combinações.            </p>
+        
         </div>
 
     </div>
